@@ -1,0 +1,67 @@
+ALGORITHM OddEven
+VAR
+    n:INTEGER ;
+BEGIN
+   Write("Enter a number: ");
+    Read(n);
+    IF (n % 2 != 0) THEN
+        Write("Number is Odd");
+    ELSE
+        Write("Number is even"); 
+    END_IF
+END OddEven ;
+ 
+ ALGORITHM SumOfNaturalNumbers
+VAR
+    N, sum, i: INTEGER;
+BEGIN
+    sum := 0;
+
+
+    Write("Enter a positive integer N: ");
+    Read(N);
+
+
+    FOR i FROM 1 TO N STEP 1  DO
+         sum := sum + i;
+    END_FOR;
+
+
+    Write("The sum of the first ", N, " natural numbers is: ", sum);
+END SumOfNaturalNumbers;
+ALGORITHM AnalysePhrase
+VAR
+    phrase: string
+    longueur: integer = 0
+    mots: integer = 1
+    voyelles: integer = 0
+    i: integer = 1
+
+BEGIN
+    PRINT "Entrez la phrase se terminant par un point : "
+    INPUT phrase
+
+    WHILE i <= LENGTH(phrase) DO
+        
+        longueur = longueur + 1
+
+        
+        IF phrase[i] = " " THEN
+            mots = mots + 1
+        END_IF
+
+        
+        IF phrase[i] = "a" OR phrase[i] = "e" OR phrase[i] = "i" OR phrase[i] = "o" OR phrase[i] = "u" OR 
+           phrase[i] = "A" OR phrase[i] = "E" OR phrase[i] = "I" OR phrase[i] = "O" OR phrase[i] = "U" THEN
+            voyelles = voyelles + 1
+        END_IF
+
+        
+        i = i + 1
+    END_WHILE
+
+    PRINT "Longueur de la phrase:", longueur
+    PRINT "Nombre de mots:", mots
+    PRINT "Nombre de voyelles:", voyelles
+END
+
